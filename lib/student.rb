@@ -29,7 +29,7 @@ class Student
     SELECT * FROM students 
     where name = '?' limit 1 
     SQL
-    DB[:conn].execute(sql).map {|student| new_from_db(student)}.first
+    DB[:conn].execute(sql, name).map {|student| new_from_db(student)}.first
   end
   
   def save
