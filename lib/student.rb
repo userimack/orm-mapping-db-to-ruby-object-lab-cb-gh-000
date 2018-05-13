@@ -71,4 +71,7 @@ class Student
     SQL 
     DB[:conn].execute(sql).map {|student| new_from_db(student)}
   end 
+  
+  def self.first_x_students_in_grade_10(x)
+    
 end
