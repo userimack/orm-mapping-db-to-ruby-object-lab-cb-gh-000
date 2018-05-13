@@ -27,7 +27,7 @@ class Student
     # return a new instance of the Student class
     sql =<<-SQL
     SELECT * FROM students 
-    where name = ?
+    where name = '?'
     SQL
     DB[:conn].execute(sql).first.map {|student| new_from_db(student)}
   end
