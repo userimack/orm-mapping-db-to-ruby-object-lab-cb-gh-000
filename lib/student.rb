@@ -29,7 +29,7 @@ class Student
     SELECT * FROM students 
     where name = ?
     SQL
-    DB[:conn].execute(sql)first..map {|student| new_from_db(student)}
+    DB[:conn].execute(sql).first.map {|student| new_from_db(student)}
   end
   
   def save
