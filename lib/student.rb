@@ -59,7 +59,7 @@ class Student
   end
   
   def self.count_all_students_in_grade_9
-    sql =<<-SQL 
+    sql =<<-SQL
     SELECT * from students where grade = 9;
     SQL 
     DB[:conn].execute(sql).map {|student| new_from_db(student)}
