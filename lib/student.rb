@@ -83,7 +83,7 @@ class Student
     sql =<<-SQL
     SELECT * from students where grade = 10 limit 1;
     SQL
-    DB[:conn].execute(sql).map {|student| new_from_db(student)}
+    DB[:conn].execute(sql).map {|student| new_from_db(student)}.first
   end 
   
   def self.all_students_in_grade_X(x)
